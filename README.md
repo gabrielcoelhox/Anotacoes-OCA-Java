@@ -47,9 +47,94 @@ Repositório destinado a anotações de estudo para a prova de certificação **
     - 9.2. Métodos comuns (substring, length, indexOf, etc.).
 
 
-## <a id="id1">:page_facing_up: Introdução </a>
+## <a id="id1">:page_facing_up: 1. Introdução </a>
 [INÍCIO](#id99)
 
 A certificação Oracle Certified Associate (OCA) Java SE 8 Programmer é uma qualificação básica para programadores Java e reconhece o domínio dos fundamentos da linguagem Java e conceitos de programação orientada a objetos. Ela é ideal para quem quer consolidar sua base na linguagem e abrir portas no mercado de trabalho.
 
+## <a id="id2"> 2. Java Basics</a>
+[INÍCIO](#id99)
 
+A estrutura básica de uma classe Java é o ponto de partida para criar programas em Java. Todas as aplicações Java são construídas usando classes, que contêm campos (variáveis) e métodos (funções). Entender essa estrutura é essencial para qualquer desenvolvedor.
+
+<details>
+<summary><h3><b>2.1 Estrutura básica de uma classe Java</b></h3></summary>
+  
+<h4>Estrutura geral de uma classe</h4>
+
+``` java
+// Pacote (opcional)
+package com.example;
+
+// Importações (opcional)
+import java.util.Scanner;
+
+// Declaração da Classe
+public class MinhaClasse {
+
+    // Campos ou Atributos (variáveis de instância ou estáticas)
+    private String nome;
+    private static int contador;
+
+    // Construtor
+    public MinhaClasse(String nome) {
+        this.nome = nome;
+    }
+
+    // Métodos (comportamentos)
+    public void imprimirNome() {
+        System.out.println("Nome: " + nome);
+    }
+
+    public static void mostrarContador() {
+        System.out.println("Contador: " + contador);
+    }
+
+    // Método principal (ponto de entrada do programa)
+    public static void main(String[] args) {
+        MinhaClasse obj = new MinhaClasse("Java");
+        obj.imprimirNome();
+        contador++;
+        mostrarContador();
+    }
+}
+```
+<h4>Explicação dos componentes</h4>
+
+1.  Pacotes (`package`)
+    - Define o namespace da classe.
+    - Ajuda a organizar o código, principalmente em projetos grandes.
+    - Exemplo: `package com.example;`.
+
+2.  Importações (`import`)
+    - Permitem o uso de classes externas no código.
+    - Exemplo: `import java.util.Scanner;`.
+
+3.  Declaração da classe
+    - Definida com a palavra-chave `class`.
+    - O modificador `public` significa que a classe é acessível por outros pacotes.
+    - O nome da classe deve corresponder ao nome do arquivo (sensível a maiúsculas/minúsculas).
+
+4.  Campos/Atributos
+    - São variáveis que representam o estado da classe ou de seus objetos.
+    - Podem ser:
+        - __De instância:__ Associados a objetos individuais (`private String nome;`).
+        - __Estáticos:__ Associados à classe e compartilhados por todos os objetos (`static int contador;`).
+
+5. Construtor
+    - Um método especial chamado quando o objeto é criado.
+    - Não tem tipo de retorno e seu nome __deve__ ser igual ao da classe.
+    - Exemplo: `public MinhaClasse(String nome) { this.nome = nome; }`.
+
+6. Métodos
+    - Definem comportamentos ou ações.
+    - Podem ser:
+        - __De instância:__ Operam em atributos do objeto (`public void imprimirNome()`).
+        - __Estáticos:__ Operam na classe e não dependem de instância (`public static void mostrarContador()`).
+
+7. Método main
+    - Ponto de entrada do programa.
+    - Deve ser declarado como:
+    ``` java public static void main(String[] args) ```
+    - Aqui começa a execução do programa.
+</details> 
