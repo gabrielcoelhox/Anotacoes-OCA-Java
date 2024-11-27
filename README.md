@@ -402,7 +402,7 @@ Características:
 5. Incremento/Decremento: Alteram valores em 1 (`++`, `--`).
 
 <details>
-<summary><h3><b>3.1 Declarar e inicializar variáveis;</b></h3></summary>
+<summary><h3><b>3.1 Declarar e inicializar variáveis</b></h3></summary>
 
 Variáveis são usadas para armazenar dados em memória. Em Java, declarar e inicializar variáveis segue regras específicas.
 
@@ -453,8 +453,7 @@ int x = 1, y = 2, z = 3; // Declaração e inicialização.
 
 <h4>🔹<b>Exemplo Completo</b></h4>
 
-```
-java
+```java
 public class Exemplo {
     public static void main(String[] args) {
         int idade = 30;               // Declara e inicializa.
@@ -476,4 +475,102 @@ Salário: 4500.75
 ```
 
 Declarar e inicializar variáveis corretamente é fundamental para evitar erros e gerenciar dados no programa.
+</details>
+
+<details>
+<summary><h3><b>3.2 Trabalhando com tipos primitivos</b></h3></summary>
+
+O Java fornece tipos primitivos para armazenar dados simples como números, caracteres e valores booleanos. Esses tipos são eficientes porque armazenam os dados diretamente na memória, sem overhead de objetos.
+
+<h4>🔹<b>Os 8 Tipos Primitivos</b></h4>
+
+| Tipo        | Tamanho   | Valor Padrão | Faixa de Valores                          | Exemplo de Uso               |
+|-------------|-----------|--------------|------------------------------------------|------------------------------|
+| **byte**    | 8 bits    | 0            | -128 a 127                                | Para economia de memória.    |
+| **short**   | 16 bits   | 0            | -32.768 a 32.767                          | Contadores pequenos.         |
+| **int**     | 32 bits   | 0            | -2³¹ a 2³¹-1                              | Inteiros padrão.             |
+| **long**    | 64 bits   | 0L           | -2⁶³ a 2⁶³-1                              | Números muito grandes.       |
+| **float**   | 32 bits   | 0.0f         | ~6-7 dígitos decimais de precisão         | Valores decimais simples.    |
+| **double**  | 64 bits   | 0.0          | ~15 dígitos decimais de precisão          | Valores decimais precisos.   |
+| **char**    | 16 bits   | '\u0000'     | Um caractere Unicode (0 a 65.535)         | Letras, símbolos.            |
+| **boolean** | 1 bit     | false        | `true` ou `false`                         | Lógico (verdadeiro/falso).   |
+
+<h4>🔹<b>Declaração e Inicialização</b></h4>
+
+1. Declaração Simples:
+```java
+int idade;
+float altura;
+```
+
+2. Declaração e Inicialização:
+```java
+int idade = 25;
+double salario = 4500.75;
+```
+
+<h4>🔹<b>Conversões Entre Tipos Primitivos</b></h4>
+
+1. Conversão Implícita (Widening)
+Acontece quando você converte um tipo menor para um maior, sem risco de perda de dados.
+
+Exemplo:
+```java
+int num = 100;
+long numLong = num; // int -> long
+```
+
+2. Conversão Explícita (Casting)
+Necessária quando há risco de perda de dados, como ao converter de um tipo maior para um menor.
+
+Exemplo:
+```java
+double preco = 19.99;
+int precoInteiro = (int) preco; // double -> int (perde os decimais)
+```
+
+<h4>🔹<b>Lidando com Números Grandes</b></h4>
+
+1. Use sufixos para indicar tipos específicos:
+- `L` para `long`: `long numeroGrande = 123456789L`;
+- `f` para `float`: `float pi = 3.14f`;
+
+2. Separe os números longos com underscores para legibilidade:
+```java
+int populacao = 1_000_000;
+```
+
+<h4>🔹<b>Exemplo Prático</b></h4>
+
+```java
+public class TiposPrimitivos {
+    public static void main(String[] args) {
+        byte idade = 30;
+        int salario = 4500;
+        float altura = 1.75f;
+        double peso = 70.5;
+        char inicial = 'J';
+        boolean empregado = true;
+
+        System.out.println("Idade: " + idade);
+        System.out.println("Salário: " + salario);
+        System.out.println("Altura: " + altura);
+        System.out.println("Peso: " + peso);
+        System.out.println("Inicial: " + inicial);
+        System.out.println("Empregado: " + empregado);
+    }
+}
+```
+
+Saída:
+```yaml
+Copiar código
+Idade: 30
+Salário: 4500
+Altura: 1.75
+Peso: 70.5
+Inicial: J
+Empregado: true
+```
+
 </details>
