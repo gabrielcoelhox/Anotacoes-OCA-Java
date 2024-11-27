@@ -1,5 +1,5 @@
 # <p align="center"> <a id="id99"> 📝 Oracle Certified Associate Java 8 📝</p>
-<p align="center"> 💻 Atualizado em 24 de Novembro de 2024 💻</p>
+<p align="center"> 💻 Atualizado em 26 de Novembro de 2024 💻</p>
 <p align="center">
   <a href="https://github.com/gabrielcoelhox/Anotacoes-OCA-Java/commits/main">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gabrielcoelhox/Anotacoes-OCA-Java">
@@ -25,7 +25,7 @@ Repositório destinado a anotações de estudo para a prova de certificação **
 4. [Controle de Fluxo](#id4)
     - 4.1. Estruturas de decisão: `if-else`, `switch`;
     - 4.2. Laços de repetição: `for`, `while`, `do-while`;
-    - 4.3. Manipulação de ==break== e ==continue==.
+    - 4.3. Manipulação de `break` e `continue`.
 5. [Classes, Métodos e Encapsulamento](#id5)
     - 5.1. Criar e usar métodos;
     - 5.2. Overloading e sobrecarga de métodos;
@@ -59,7 +59,7 @@ A estrutura básica de uma classe Java é o ponto de partida para criar programa
 
 <details>
 <summary><h3><b>2.1 Estrutura básica de uma classe Java</b></h3></summary>
-  
+
 <h4>Estrutura geral de uma classe</h4>
 
 ``` java
@@ -137,4 +137,71 @@ public class MinhaClasse {
     - Deve ser declarado como:
     ``` java public static void main(String[] args) ```
     - Aqui começa a execução do programa.
-</details> 
+</details>
+
+<details>
+<summary><h3><b>2.2 Executar uma classe Java</b></h3></summary>
+
+<h4>Passos para Executar uma Classe Java</h4>
+
+1. <b>Método `main`</b>
+- O método `main` é o ponto de entrada de um programa Java.
+- Deve ter a assinatura exata:
+``` java
+public static void main(String[] args)
+```
+
+- Significado:
+    - `public`: Acessível pela JVM.
+    - `static`: Pode ser chamado sem criar uma instância da clsse.
+    - `void`: Não retorna nenhum valor.
+    - `String[] args`: Aceita argumentos de linha de comando.
+
+<h4>Exemplos de execução</h4>
+
+Arquivo: `com/exemplo/ExemploComPacote.java`
+
+```java
+package com.exemplo;
+
+public class ExemploComPacote {
+    public static void main(String[] args) {
+        System.out.println("Executando com pacotes!");
+    }
+}
+```
+
+Comandos:
+```bash
+javac com/exemplo/ExemploComPacote.java
+java com.exemplo.ExemploComPacote
+```
+
+<h4>Argumentos de Linha de Comando</h4>
+
+É possível passar argumentos para o programa no momento da execução. Por exemplo: Arquivo: `Argumentos.java`
+
+```java
+public class Argumentos {
+    public static void main(String[] args) {
+        for (String arg : args) {
+            System.out.println("Argumento: " + arg);
+        }
+    }
+}
+```
+
+Comandos:
+```bash
+javac Argumentos.java
+java Argumentos Java é incrível
+```
+
+Saída:
+```makefile
+Argumento: Java
+Argumento: é
+Argumento: incrível
+```
+
+</details>
