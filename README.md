@@ -287,3 +287,97 @@ public class Conflito {
 }
 ```
 </details>
+<details>
+<summary><h3><b>2.4 Diferença entre variáveis locais, de instância e estáticas</b></h3></summary>
+
+As variáveis em Java podem ser classificadas com base no seu escopo e propósito: locais, de instância e estáticas. Cada tipo de variável tem características e usos específicos.
+
+<h4>🔹<b>Variáveis Locais</b></h4>
+
+- Definição: Declaradas dentro de um método, construtor ou bloco de código. Só existem durante a execução do método/bloco onde foram definidas.
+- Escopo: Restrito ao método, construtor ou bloco onde foram declaradas.
+- Inicialização: Devem ser inicializadas explicitamente antes de serem usadas.
+- Acesso: Não podem ter modificadores de acesso (como `public` ou `private`).
+
+Exemplo:
+```java
+public class Exemplo {
+    public void metodo() {
+        int local = 10; // Variável local
+        System.out.println("Valor da variável local: " + local);
+    }
+}
+```
+Características:
+- Criadas na pilha de execução.
+- Não têm valores padrão.
+- Não podem ser usadas fora do método/bloco onde foram declaradas.
+
+<h4>🔹<b>Variáveis de Instância</b></h4>
+
+- Definição: Declaradas dentro de uma classe, mas fora de métodos, construtores ou blocos. Estão associadas a instâncias (objetos) da classe.
+- Escopo: Acessíveis por toda a classe. Cada objeto da classe tem sua própria cópia da variável.
+- Inicialização: Podem ser inicializadas diretamente ou no construtor. Se não forem, recebem valores padrão:
+    - `0` para tipos numéricos.
+    - `false` para `boolean`.
+    - `null` para objetos.
+
+Exemplo:
+```java
+public class Pessoa {
+    private String nome; // Variável de instância
+
+    public Pessoa(String nome) {
+        this.nome = nome; // Inicializando a variável de instância
+    }
+
+    public void mostrarNome() {
+        System.out.println("Nome: " + nome);
+    }
+}
+```
+
+Características:
+- Criadas na memória heap.
+- São únicas para cada objeto.
+- Podem ter modificadores de acesso (`private`, `public`, etc.).
+
+<h4>🔹<b>Variáveis Estáticas(ou de Classe)</b></h4>
+
+- Definição: Declaradas dentro de uma classe com a palavra-chave static. Associadas à classe e não a objetos individuais.
+- Escopo: Acessíveis por toda a classe e compartilhadas entre todas as instâncias.
+- Inicialização: Inicializadas na primeira vez que a classe é carregada na memória.
+- Acesso: Podem ser acessadas diretamente pelo nome da classe, sem a necessidade de criar um objeto.
+
+Exemplo:
+```java
+public class Contador {
+    public static int contador = 0; // Variável estática
+
+    public Contador() {
+        contador++; // Incrementa o valor estático
+    }
+
+    public static void mostrarContador() {
+        System.out.println("Contador: " + contador);
+    }
+}
+```
+
+Características:
+- Criadas na área de memória estática.
+- Compartilhadas por todas as instâncias da classe.
+- Podem ser usadas para criar constantes (`static final`).
+
+<h4>🔹<b>Resumo</b></h4>
+
+| Característica      | Variáveis Locais            | Variáveis de Instância      | Variáveis Estáticas         |
+|---------------------|-----------------------------|-----------------------------|-----------------------------|
+| **Definição**       | Dentro de métodos ou blocos.| Dentro da classe.           | Dentro da classe com `static`. |
+| **Escopo**          | Restrito ao método/bloco.   | Pertence a cada objeto.     | Compartilhada por todos os objetos. |
+| **Memória**         | Pilha de execução.          | Memória heap.               | Área de memória estática.   |
+| **Inicialização**   | Deve ser explícita.         | Valores padrão (ou explícita). | Inicializada na carga da classe. |
+| **Acesso**          | Não pode ter modificadores. | Pode ter modificadores.     | Pode ser acessada pela classe diretamente. |
+| **Uso**             | Para cálculos temporários.  | Para atributos de objetos.  | Para atributos compartilhados ou constantes. |
+
+</details>
