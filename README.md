@@ -379,5 +379,101 @@ Características:
 | **Inicialização**   | Deve ser explícita.         | Valores padrão (ou explícita). | Inicializada na carga da classe. |
 | **Acesso**          | Não pode ter modificadores. | Pode ter modificadores.     | Pode ser acessada pela classe diretamente. |
 | **Uso**             | Para cálculos temporários.  | Para atributos de objetos.  | Para atributos compartilhados ou constantes. |
+</details>
 
+## <a id="id3"> 3. Tipos de Dados e Operadores</a>
+
+<h4>🔹<b>Tipos de Dados</b></h4>
+
+1. Primitivos:
+    - Numéricos inteiros: `byte`, `short`, `int`, `long`.
+    - Numéricos decimais: `float`, `double`.
+    - Caractere: `char`.
+    - Lógico: `boolean` (true/false).
+
+2. Referência: Para objetos, arrays e o valor `null`.
+
+<h4>🔹<b>Operadores</b></h4>
+
+1. Aritméticos: Realizam cálculos matemáticos (`+`, `-`, `*`, `/`, `%`).
+2. Relacionais: Comparam valores (`==`, `!=`, `>`, `<`, `>=`, `<=`).
+3. Lógicos: Avaliam condições (`&&`, `||`, `!`).
+4. Atribuição: Usados para atribuir valores (`=v`, `+=`, `-=`, etc.).
+5. Incremento/Decremento: Alteram valores em 1 (`++`, `--`).
+
+<details>
+<summary><h3><b>3.1 Declarar e inicializar variáveis;</b></h3></summary>
+
+Variáveis são usadas para armazenar dados em memória. Em Java, declarar e inicializar variáveis segue regras específicas.
+
+<h4>🔹<b>Declaração de Variáveis</b></h4>
+Declarar uma variável significa reservar espaço na memória e especificar seu tipo. A sintaxe básica é:
+
+```java
+tipo nomeDaVariavel;
+```
+
+Exemplo:
+```java
+int idade;  // Declara uma variável chamada "idade" do tipo inteiro.
+```
+
+<h4>🔹<b>Inicialização de Variáveis</b></h4>
+Inicializar uma variável significa atribuir um valor a ela. Isso pode ser feito na declaração ou posteriormente.
+
+Exemplos:
+```
+java
+int idade = 25;  // Declara e inicializa.
+int ano;         // Declara.
+ano = 2024;      // Inicializa depois.
+```
+
+- Variáveis locais (dentro de métodos) precisam ser inicializadas antes do uso.
+- Variáveis de instância e estáticas recebem valores padrão:
+  - `0` para tipos numéricos.
+  - `false` para `boolean`.
+  - `null` para referências.
+
+<h4>🔹<b>Declaração e Inicialização Múltipla</b></h4>
+Várias variáveis do mesmo tipo podem ser declaradas ou inicializadas na mesma linha:
+
+```
+java
+int a, b, c;           // Declaração.
+int x = 1, y = 2, z = 3; // Declaração e inicialização.
+```
+
+<h4>🔹<b>Regras para Nomes de Variáveis</b></h4>
+
+1. Devem começar com uma letra, `_`, ou `$`.
+2. Não podem usar palavras reservadas (`int`, `class`, etc.).
+3. Sensíveis a maiúsculas e minúsculas (`idade` ≠ `Idade`).
+
+
+<h4>🔹<b>Exemplo Completo</b></h4>
+
+```
+java
+public class Exemplo {
+    public static void main(String[] args) {
+        int idade = 30;               // Declara e inicializa.
+        double salario;               // Declara.
+        salario = 4500.75;            // Inicializa depois.
+
+        System.out.println("Idade: " + idade);
+        System.out.println("Salário: " + salario);
+    }
+}
+```
+
+Saída:
+
+```
+makefile
+Idade: 30
+Salário: 4500.75
+```
+
+Declarar e inicializar variáveis corretamente é fundamental para evitar erros e gerenciar dados no programa.
 </details>
