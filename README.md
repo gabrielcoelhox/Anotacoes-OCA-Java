@@ -60,7 +60,7 @@ A estrutura básica de uma classe Java é o ponto de partida para criar programa
 <details>
 <summary><h3><b>2.1 Estrutura básica de uma classe Java</b></h3></summary>
 
-<h4>Estrutura geral de uma classe</h4>
+<h4>🔹Estrutura geral de uma classe</h4>
 
 ``` java
 // Pacote (opcional)
@@ -99,7 +99,7 @@ public class MinhaClasse {
     }
 }
 ```
-<h4>Explicação dos componentes</h4>
+<h4>🔹Explicação dos componentes</h4>
 
 1.  Pacotes (`package`)
     - Define o namespace da classe.
@@ -138,11 +138,10 @@ public class MinhaClasse {
     ``` java public static void main(String[] args) ```
     - Aqui começa a execução do programa.
 </details>
-
 <details>
 <summary><h3><b>2.2 Executar uma classe Java</b></h3></summary>
 
-<h4>Passos para Executar uma Classe Java</h4>
+<h4>🔹Passos para Executar uma Classe Java</h4>
 
 1. <b>Método `main`</b>
 - O método `main` é o ponto de entrada de um programa Java.
@@ -157,7 +156,7 @@ public static void main(String[] args)
     - `void`: Não retorna nenhum valor.
     - `String[] args`: Aceita argumentos de linha de comando.
 
-<h4>Exemplos de execução</h4>
+<h4>🔹Exemplos de execução</h4>
 
 Arquivo: `com/exemplo/ExemploComPacote.java`
 
@@ -177,7 +176,7 @@ javac com/exemplo/ExemploComPacote.java
 java com.exemplo.ExemploComPacote
 ```
 
-<h4>Argumentos de Linha de Comando</h4>
+<h4>🔹Argumentos de Linha de Comando</h4>
 
 É possível passar argumentos para o programa no momento da execução. Por exemplo: Arquivo: `Argumentos.java`
 
@@ -203,5 +202,88 @@ Argumento: Java
 Argumento: é
 Argumento: incrível
 ```
+</details>
+<details>
+<summary><h3><b>2.3 Importar pacotes Java e usar import</b></h3></summary>
 
+O uso de pacotes e importações em Java permite organizar e reutilizar código. Os pacotes agrupam classes relacionadas, e a palavra-chave `import` facilita o acesso a essas classes em diferentes partes de um programa.
+
+<h4>🔹<b>O que é um pacote?</b></h4>
+
+Um pacote em Java é como uma "pasta" que organiza classes e interfaces. Ele ajuda a evitar conflitos de nomes e facilita a manutenção do código.
+
+Por exemplo:
+- O pacote `java.util` contém classes úteis, como `ArrayList` e `HashMap`.
+- O pacote `java.io` contém classes para operações de entrada e saída.
+
+Exemplo:
+```java
+package com.exemplo;
+```
+
+<h4>🔹<b>O que é import?</b></h4>
+
+A palavra-chave `import` é usada para acessar classes ou interfaces de outros pacotes sem precisar usar o nome completo do pacote toda vez.
+
+<h4>🔹<b>Importação Explícita</b></h4>
+Especifica uma única classe para importação:
+
+```java
+import java.util.ArrayList;
+```
+
+<h4>🔹<b>Importação com *</b></h4>
+Importa todas as classes
+
+```java
+import java.util.*;
+```
+
+<h4>🔹<b>Importação Implícita</b></h4>
+Alguns pacotes são automaticamente acessíveis, sem necessidade de `import`:
+
+1. `java.lang`
+Contém classes fundamentais como `String`, `Math`, `Object`, etc.
+
+```java
+public class Exemplo {
+    public static void main(String[] args) {
+        System.out.println(Math.sqrt(16)); // Sem import
+    }
+}
+```
+
+2. Classes no mesmo pacote
+Classes definidas no mesmo pacote não requerem `import`.
+
+<h4>🔹<b>Usando o Nome Completo da Classe (FQN)</b></h4>
+
+Se você não quiser usar `import`, pode referenciar uma classe pelo seu nome completo (Fully Qualified Name - FQN):
+
+```java
+public class Exemplo {
+    public static void main(String[] args) {
+        java.util.ArrayList<String> lista = new java.util.ArrayList<>();
+    }
+}
+```
+
+<h4>🔹<b>Quando e Por Que Usar import?</b></h4>
+
+- Facilita a leitura do código ao evitar FQNs repetitivos.
+- Ajuda a identificar quais bibliotecas externas estão sendo usadas.
+- Evita conflitos de nomes (duas classes com o mesmo nome em pacotes diferentes).
+
+Exemplo de conflito:
+```java
+import java.util.Date;
+import java.sql.Date;
+
+public class Conflito {
+    public static void main(String[] args) {
+        Date data1 = new Date(); // java.util.Date
+        java.sql.Date data2 = new java.sql.Date(System.currentTimeMillis());
+    }
+}
+```
 </details>
